@@ -1,10 +1,8 @@
 import tensorflow as tf
 import pickle
 import keras
-from keras.layers import Input, Dense, Activation, ZeroPadding2D,\
-BatchNormalization, Flatten, Conv2D
-from keras.layers import AveragePooling2D, MaxPooling2D, Dropout,\
-GlobalMaxPool2D, GlobalAveragePooling2D
+from keras.layers import Input, Dense, Activation, ZeroPadding2D, BatchNormalization, Flatten, Conv2D
+from keras.layers import AveragePooling2D, MaxPooling2D, Dropout, GlobalMaxPool2D, GlobalAveragePooling2D
 from keras.models import Model
 import keras.backend as K
 K.set_image_data_format("channels_last")
@@ -145,8 +143,7 @@ print("test_y " + str(test_Y.shape))
 print("classes " + str(classes))
 
 model = alexnet_model((224, 224 ,3))
-model.compile(optimizer='sgd', \
-              loss = 'categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer='sgd', loss = 'categorical_crossentropy', metrics=['accuracy'])
 history = model.fit(x = train_X, y= train_Y, epochs = 30)
 prediction = model.evaluate(x = test_X, y = test_Y)
 
@@ -162,13 +159,13 @@ plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.show()
 
-#with open('/trainHistoryDict', 'wb') as file_pi:
-#        pickle.dump(history.history, file_pi)
+# with open('/saved_training_model', 'wb') as out_file:
+#     pickle.dump(history.history, out_file)
 
-with open('hist_alexnet_baseline.pickle', 'wb') as handle:
+with open('alexnet_baseline.pickle', 'wb') as handle:
     pickle.dump(history.history, handle)
 
-with open('hist_alexnet_baseline.pickle', 'rb') as handle:
+with open('alexnet_baseline.pickle', 'rb') as handle:
     b = pickle.load(handle)
 
 print(b)
