@@ -14,10 +14,10 @@ import pickle
 import matplotlib.pyplot as plt
 import matplotlib
 def load_dataset():
-    X_set = np.load("phi2018task7/X_train.npy") # (2632, 224, 224, 3)
+    X_set = np.load("../data_phi2018/task7_X_train.npy") # (2632, 224, 224, 3)
     
     N = X_set.shape[0]
-    Y_set = np.load("phi2018task7/Y_train.npy") # (2632,)
+    Y_set = np.load("../data_phi2018/task7_y_train.npy") # (2632,)
 
 #    shuffle the data 
     arr = np.arange(N)
