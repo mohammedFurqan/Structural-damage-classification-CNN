@@ -17,5 +17,5 @@ After having baseline models, the models were tuned to obtain improved results, 
 
 ### Dataset Source: 
 PHI 2018 challenge conducted by Pacific Earthquake Engineering Research Center (PEER)
-Home: https://peer.berkeley.edu/home
-Download: https://apps.peer.berkeley.edu/phi-net/download/
+- Home: https://peer.berkeley.edu/home
+- Download: https://apps.peer.berkeley.edu/phi-net/download/
